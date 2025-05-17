@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác nhận xóa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+<div class="card p-4 border-danger">
+    <h4 class="text-danger mb-3">
+        Xác nhận xóa chương trình khuyến mãi:
+        <span class="fw-bold" th:text="${promotionDto.title}">Tên khuyến mãi</span>?
+    </h4>
+    <form th:action="@{'/delete/' + ${promotionDto.id}}" method="post" class="d-flex gap-3">
+        <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+        <a th:href="@{/}" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>
+</body>
+</html>
